@@ -1,0 +1,24 @@
+img{
+border-radius:200px;
+}
+body{
+    background:#1AD8D0;
+}
+p{
+    color:#D45817;
+    text-decoration: underline;
+    text-transform:capitalize;
+    letter-spacing:1px;
+    word-spacing:4px;
+    text-shadow:3px 3px 3px #fff;
+    font-family:"Verdana";
+    font-size:20px;
+}
+h1{
+    font-weight: bold;
+}
+h2{
+    text-align:center;
+    line-height=30px;
+    background:#31B7F9;
+}
