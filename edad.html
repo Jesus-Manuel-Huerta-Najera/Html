@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>Incluyendo JS en HTML5</title>
+<script type="text/javascript">
+function alerta() {
+var y= (new Date).getFullYear();
+var aa=document.getElementById("valor").value;
+var r = parseInt(y) - parseInt(aa);
+alert("Tu edad es:"+ r);
+}
+</script>
+</head>
+<body>
+<section>
+<p>coloca tu año de nacimiento</p>
+<input type="number" id="valor">
+<span onclick="alerta();">Clic aqu&iacute;</span>
+</section>
+</body>
+</html>
