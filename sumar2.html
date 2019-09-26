@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>Incluyendo JS en HTML5</title>
+<script type="text/javascript">
+function alerta() {
+var y= (new Date).getFullYear();
+alert(y)
+var aa=document.getElementById("valor").value;
+var bb=document.getElementById("valor2").value;
+alert(parseInt(aa) + parseInt(bb));
+}
+</script>
+</head>
+<body>
+<section>
+<p>numero 1</p>
+<input type="number" id="valor">
+<p>numero 2</p>
+<input type="number" id="valor2">
+<span onclick="alerta();">Clic aqu&iacute;</span>
+</section>
+</body>
+</html>
