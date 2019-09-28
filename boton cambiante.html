@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>Incluyendo JS en HTML5</title>
+<script type="text/javascript">
+window.onload = function(){
+    var a = 0;
+    document.getElementById("valor").onclick = function(){
+      if  (a == 0){
+a++;
+document.getElementById("valor").value = "O";
+}
+else{
+a--;
+document.getElementById("valor").value = "X";
+}
+    }
+}
+
+</script>
+</head>
+<body>
+<section>
+
+<input type="button"  id="valor" value ="X"  onclick="alerta();" style='width:200px; height:200px'>
+</section>
+</body>
+</html>
