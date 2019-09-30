@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>Incluyendo JS en HTML5</title>
+<script type="text/javascript">
+function alerta() {
+var a= document.getElementById("valor").value;
+if (a=="X"){
+document.getElementById("valor").value = "X";
+}else{
+document.getElementById("valor").value = "O";
+document.getElementById("valor").disabled = True;
+}
+}
+function alerta2() {
+var b= document.getElementById("valor2").value;
+if (b=="O"){
+document.getElementById("valor2").value = "O";
+}else{
+document.getElementById("valor2").value = "X";
+document.getElementById("valor2").disabled = True;
+}
+}
+function alerta3() {
+var c= document.getElementById("valor3").value;
+if (c=="X"){
+document.getElementById("valor3").value = "X";
+}else{
+document.getElementById("valor3").value = "O";
+document.getElementById("valor").disabled = True;
+}
+}
+</script>
+</head>
+<body>
+<section>
+<input type="button"  id="valor"   onclick="alerta();" style='width:200px; height:200px'>
+<input type="button"  id="valor2"   onclick="alerta2();" style='width:200px; height:200px'>
+<input type="button"  id="valor3"   onclick="alerta3();" style='width:200px; height:200px'>
+</section>
+</body>
+</html>
