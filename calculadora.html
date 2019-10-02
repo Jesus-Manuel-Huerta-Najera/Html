@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <style>
+        input{
+        width: 410px;
+        height: 100px;
+        background-color: rgb(75, 182, 182);
+        color: white;
+        }
+        input[type=button], input[type=submit], input[type=reset]{
+        width: 100px;
+        height: 100px;
+        background-color: rgb(11, 182, 102);
+        color: white;
+        }
+        </style>
+</head>
+<body>
+ <form name="Prueba">
+    <input type="textfield" name="cajita" value="">
+    <section>
+    <input type="button" value="1" onClick="document.Prueba.cajita.value+='1'">
+    <input type="button" value="2" onClick="document.Prueba.cajita.value+='2'">
+    <input type="button" value="3" onClick="document.Prueba.cajita.value+='3'">
+    <input type="button" value="+" onClick="document.Prueba.cajita.value+='+'">
+   </section>
+   <section>
+    <input type="button" value="4" onClick="document.Prueba.cajita.value+='4'">
+    <input type="button" value="5" onClick="document.Prueba.cajita.value+='5'">
+    <input type="button" value="6" onClick="document.Prueba.cajita.value+='6'">
+    <input type="button" value="-" onClick="document.Prueba.cajita.value+='-'">
+   </section>
+   <section>
+    <input type="button" value="7" onClick="document.Prueba.cajita.value+='7'">
+    <input type="button" value="8" onClick="document.Prueba.cajita.value+='8'">
+    <input type="button" value="9" onClick="document.Prueba.cajita.value+='9'">
+    <input type="button" value="*" onClick="document.Prueba.cajita.value+='*'">
+  </section>
+   <section>
+    <input type="reset" value="c">
+    <input type="button" value="0" onClick="document.Prueba.cajita.value+='0'">
+    <input type="button" value="/" onClick="document.Prueba.cajita.value+='/'">
+    <input type="button" value="=" onClick="document.Prueba.cajita.value=eval(document.Prueba.cajita.value)">
+  </section>
+</form>
+    </body>
+</html>
