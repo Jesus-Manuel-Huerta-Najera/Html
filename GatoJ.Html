@@ -1,0 +1,72 @@
+<html>
+<style>
+.gato{
+width: 350px;
+height: 350px;
+background-color: blue;
+color: white;
+}
+</style>
+<script language="JavaScript">
+function alerta()
+{
+var mensaje;
+var opcion = prompt("Introduzca el nombre del jugador1:");
+if (opcion == null || opcion == "") {
+alert(alerta())
+} else {
+mensaje = "X= " + opcion;
+alert(alerta2())
+}
+document.getElementById("ejemplo").innerHTML = mensaje;
+}
+function alerta2()
+{
+var mensaje;
+var opcion = prompt("Introduzca el nombre del jugador2:");
+
+if (opcion == null || opcion == "") {
+alert(alerta2())
+} else {
+mensaje = "O= " + opcion;
+}
+document.getElementById("ejemplo2").innerHTML = mensaje;
+}
+//2
+function cargar(){
+for (var i = 1; i < 10; i++) {
+var boton = document.createElement("input");
+boton.type = "button";
+boton.value = " ";
+boton.id = "b"+i;
+boton.classList.add("gato");
+boton.setAttribute("onclick","check(this.id,this.disabled)","validation(this.id,this.disabled)");
+document.body.appendChild(boton);
+}
+}
+var a=0;
+function check(valor){
+if (a==0 ){
+a = a + 1 ;
+document.getElementById(valor).value = "O";
+document.getElementById(valor).disabled = true;
+validation();
+}else{
+a = a- 1;
+document.getElementById(valor).value = "X";
+document.getElementById(valor).disabled = true;
+validation();
+}
+}
+function validation(valor2){
+ if((b1==b2 && b2==b3)||(b1==b5 && b5==b9)||(b3==b5 && b5==b7)||(b4==b5 && b5==b6)||(b7==b8 && b8==b9)||(b1==b4 && b4==b7)||(b2==b5 && b5==b8)||(b3==b6 && b6==b9)){
+  alert(" has won!!!\nDo you wanna play again?");
+ }
+}
+</script>
+<body onload="cargar(),alerta()" >
+<p id="ejemplo">Name1</p>
+<p id="ejemplo2">Name2</p>
+
+</body>
+</html>
