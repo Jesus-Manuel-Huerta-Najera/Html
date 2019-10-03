@@ -1,8 +1,8 @@
 <html>
 <style>
 .gato{
-width: 350px;
-height: 350px;
+width: 150px;
+height: 150px;
 background-color: blue;
 color: white;
 }
@@ -40,8 +40,13 @@ boton.type = "button";
 boton.value = " ";
 boton.id = "b"+i;
 boton.classList.add("gato");
-boton.setAttribute("onclick","check(this.id,this.disabled)","validation(this.id,this.disabled)");
+boton.setAttribute("onclick","validation(this.id),check(this.id),limpiarFormulario(this.value)");
 document.body.appendChild(boton);
+if (i%3==0) {
+var saltoLinea=document.createElement("br");
+var cent=document.createElement("centre");
+document.body.appendChild(saltoLinea);
+}
 }
 }
 var a=0;
@@ -59,14 +64,54 @@ validation();
 }
 }
 function validation(valor2){
- if((b1==b2 && b2==b3)||(b1==b5 && b5==b9)||(b3==b5 && b5==b7)||(b4==b5 && b5==b6)||(b7==b8 && b8==b9)||(b1==b4 && b4==b7)||(b2==b5 && b5==b8)||(b3==b6 && b6==b9)){
-  alert(" has won!!!\nDo you wanna play again?");
- }
-}
+          var result ='';
+          var linea = null;
+          var a = new Array(10);
+          for (let i = 1; i < 10; i++) {
+              a[i]= document.getElementById('b'+ i).value;
+          }
+
+          // regla horizontal
+          var btn=[{a:1,b:2,c:3},{a:4,b:5,c:6},{a:7,b:8,c:9}]; // patron de arreglo a comparar
+          for (let i = 0; i < btn.length; i++) {
+             // compara una triada
+             if (a[btn[i].a]=='X' && a[btn[i].b]=='X' && a[btn[i].c]=='X') { result='X'; linea = btn[i]; break; }
+             if (a[btn[i].a]=='O' && a[btn[i].b]=='O' && a[btn[i].c]=='O') { result='O'; linea = btn[i]; break; }
+          }
+
+         // regla vertical
+         var btn=[{a:1,b:4,c:7},{a:2,b:5,c:8},{a:3,b:6,c:9}]; // patron de arreglo a comparar
+          for (let i = 0; i < btn.length; i++) {
+             // compara una triada
+             if (a[btn[i].a]=='X' && a[btn[i].b]=='X' && a[btn[i].c]=='X') { result='X'; linea = btn[i]; break; }
+             if (a[btn[i].a]=='O' && a[btn[i].b]=='O' && a[btn[i].c]=='O') { result='O'; linea = btn[i]; break; }
+          }   
+               
+         // regla diagonal
+         var btn=[{a:1,b:5,c:9},{a:7,b:5,c:3}]; // patron de arreglo a comparar
+          for (let i = 0; i < btn.length; i++) {
+             // compara una triada
+             if (a[btn[i].a]=='X' && a[btn[i].b]=='X' && a[btn[i].c]=='X') { result='X'; linea = btn[i]; break; }
+             if (a[btn[i].a]=='O' && a[btn[i].b]=='O' && a[btn[i].c]=='O') { result='O'; linea = btn[i]; break; }
+          }   
+            // reportar el ganador
+            if (result.length>0) {
+                document.getElementById('b'+ linea.a).style.backgroundColor = "yellow";
+                document.getElementById('b'+ linea.b).style.backgroundColor = "yellow";
+                document.getElementById('b'+ linea.c).style.backgroundColor = "yellow";
+                setTimeout(function() { alert('Gano el jugador: ' + result); },300);
+                btn.length=0;
+            }
+        }
+
+
 </script>
 <body onload="cargar(),alerta()" >
 <p id="ejemplo">Name1</p>
 <p id="ejemplo2">Name2</p>
+<section>
+        <a href="F:/html/codigo/GatoJ.Html">Reiniciar</a>
+</section>
 
 </body>
 </html>
